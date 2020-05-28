@@ -1,3 +1,0 @@
-create a secret pod
-
-kubectl create secret generic --from-literal PGPASSWORD=
