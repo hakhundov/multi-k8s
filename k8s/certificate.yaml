@@ -1,0 +1,20 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: k8s-multi-com-tls
+spec:
+  secretName: hajiakhundov-com
+  issuerRef:
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  commonName: hajiakhundov.com
+  dnsNames:
+    - hajiakhundov.com
+    - www.hajiakhundov.com
+  acme:
+    config:
+      - http01:
+          ingressClass: nginx
+        domains:
+          - hajiakhundov.com
+          - www.hajiakhundov.com
